@@ -1,0 +1,209 @@
+body > * {
+    margin: 0 9vw;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    /* box-shadow: 0 1px 5px var(--gray-3); */
+}
+
+nav .logo h1 {
+    font-weight: bolder;
+    font-size: 33px;
+}
+
+nav .links {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+
+nav .links a {
+    text-decoration: none;
+    color: #000;
+    margin-right: 20px;
+}
+
+nav .links a li {
+    font-size: 16px;
+}
+
+nav .links a li.active {
+    font-weight: bold;
+}
+
+nav .utils {
+    display: flex;
+    align-items: center;
+}
+
+nav .utils i {
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+nav .utils i:hover {
+    filter: opacity(0.5);
+}
+
+nav .utils i.cart {
+    position: relative;
+}
+
+nav .utils i.cart .count {
+    position: absolute;
+    left: 115%;
+    top: 1px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: var(--brand-color);
+    color: #ffffff;
+    font-style: normal;
+    text-align: center;
+    line-height: 22px;
+    font-size: 14px;
+}
+
+.banner {
+    position: relative;
+    width: 82vw;
+    height: 75vh;
+    overflow: hidden;
+}
+
+.banner .images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.banner .images img {
+    width: 82vw;
+}
+
+.banner .trails {
+    position: absolute;
+    z-index: 10;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+}
+
+.banner .trails .trail {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--gray-3);
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.banner .trails .trail:hover {
+    background-color: var(--gray-1);
+}
+
+.banner .trails .trail.active {
+    width: 28px;
+    border-radius: 10px;
+    background-color: var(--gray-1);
+}
+
+.banner .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.banner .arrow:hover rect {
+    fill: var(--gray-3);
+}
+
+.banner .arrow.left-arrow {
+    left: 15px;
+}
+
+.banner .arrow.right-arrow {
+    right: 15px;
+}
+
+section.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 0;
+}
+
+section.title h1 {
+    font-size: 50px;
+}
+
+section.title h1 span.gray {
+    color: var(--gray-5);
+}
+
+section.title p {
+    width: 45%;
+}
+
+section.categories {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 280px 280px;
+    gap: 20px;
+}
+
+section.categories .category {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: var(--gray-2);
+    background-position: right;
+    display: flex;
+    padding: 40px;
+}
+
+section.categories .category:not(:first-child) {
+    align-items: flex-end;
+}
+
+section.categories .category:first-child {
+    grid-row: span 2;
+    background-image: url(../assets/images/chair.png);
+}
+
+section.categories .category:nth-child(2) {
+    background-image: url(../assets/images/nightstand.png);
+}
+
+section.categories .category:nth-child(3) {
+    background-image: url(../assets/images/toaster.png);
+}
+
+section.categories .category .content h2 {
+    font-size: 32px;
+    margin-bottom: 7px;
+}
+
+section.categories .category .content a {
+    text-decoration: none;
+    color: var(--brand-color);
+    height: 22px;
+    font-size: 14px;
+    display: inline-block;
+    border-bottom: 1px solid var(--brand-color);
+}
+
+section.categories .category .content a:hover {
+    font-weight: bolder;
+}

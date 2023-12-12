@@ -1,0 +1,76 @@
+@font-face {
+    font-family: "Poppins";
+    src: url(../assets/fonts/Poppins/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url(../assets/fonts/Inter/Inter-Regular.ttf);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Inter";
+    transition: all 0.15s ease-in-out;
+}
+
+:root {
+    --blue: #377dff;
+    --green: #38cb89;
+    --yellow: #ffab00;
+    --red: #ff5630;
+    --brand-color: #000000;
+    --gray-1: #FEFEFE;
+    --gray-2: #F3F5F7;
+    --gray-3: #E8ECEF;
+    --gray-4: #6C7275;
+    --gray-5: #343839;
+    --gray-6: #232627;
+    --gray-7: #141718;
+}
+
+/* customize scrollbar */
+::-webkit-scrollbar {
+    width: 2px;
+}
+
+::-webkit-scrollbar-track {
+    background: #e8ecef;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--brand-color);
+    border-radius: 5px;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.heading {
+    font-family: "Poppins";
+}
+
+.green-txt {
+    color: var(--green);
+}
+
+.brand-btn {
+    width: 100px;
+    height: 45px;
+    background-color: #000000;
+    border-radius: 12px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 15px;
+    border: 2px solid #000000;
+}
+
+.brand-btn:hover {
+    background-color: #ffffff;
+    color: #000000;
+}

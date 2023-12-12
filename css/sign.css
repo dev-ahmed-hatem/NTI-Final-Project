@@ -1,0 +1,221 @@
+body .main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+body .main > div {
+    width: 50%;
+    height: 100vh;
+}
+
+body .main .img {
+    display: flex;
+    justify-content: center;
+}
+
+body .main .img img {
+    height: 100%;
+}
+
+body .main .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body .main .content form {
+    width: 70%;
+    height: 85%;
+    margin: auto;
+    overflow-y: auto;
+}
+
+body .main .content form h1,
+body .main .content form p {
+    margin: 25px 0;
+}
+
+body .main .content form span.link a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body .main .content form span.link a:hover {
+    text-decoration: underline;
+}
+
+body .main .content form .form-item {
+    margin: 25px 0;
+    width: 90%;
+}
+
+body .main .content form .form-item input.text {
+    border: none;
+    outline: none;
+    padding: 0 40px 0 4px;
+    border-bottom: 1px solid #e8ecef;
+    color: #000;
+    width: 100%;
+    height: 45px;
+    font-size: 14px;
+}
+
+body .main .content form .form-item input.text::placeholder {
+    color: #6c7275;
+}
+
+body .main .content form .form-item input.text:focus {
+    border-bottom: 2px solid #000000;
+}
+
+body .main .content form .form-item.password {
+    position: relative;
+}
+
+body .main .content form .form-item.password i {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    cursor: pointer;
+    display: none;
+}
+
+body .main .content form .form-item.password i.active {
+    display: inline-block;
+}
+
+body .main .content form .form-item.password i:hover path {
+    fill: #6c7275 !important;
+}
+
+body .main .content form .form-item.terms {
+    display: flex;
+    margin: 20px 0;
+}
+
+body .main .content form.sign-in .form-item.terms {
+    justify-content: space-between;
+}
+
+body .main .content form.sign-in .form-item.terms .remember {
+    font-size: 17;
+    display: flex;
+    align-items: center;
+}
+
+body .main .content form.sign-in .form-item.terms a {
+    text-decoration: none;
+    color: var(--brand-color);
+    font-weight: bolder;
+}
+
+body .main .content form.sign-in .form-item.terms a:hover {
+    text-decoration: underline;
+}
+
+body .main .content form .form-item.terms input {
+    width: 20px;
+    height: 20px;
+    border: 4px solid #6c7275;
+    margin: 0 10px 0 4px;
+}
+
+body .main .content form .form-item input[type="submit"] {
+    width: 100%;
+    height: 52px;
+}
+
+/* small mobile devices */
+@media screen and (max-width: 768px) {
+    body .main {
+        flex-direction: column;
+        height: fit-content;
+    }
+
+    body .main > div {
+        width: 100%;
+        height: fit-content;
+    }
+
+    body .main .img {
+        width: 100%;
+        height: 400px;
+    }
+
+    body .main .img img {
+        width: 100%;
+        max-width: 440px;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    body .main .content form {
+        width: 85%;
+        height: 90%;
+    }
+
+    body .main .content form .form-item {
+        margin: 18px 0;
+        width: 100%;
+    }
+
+    body .main .content form .form-item.terms {
+        font-size: 12px;
+        align-items: center;
+        margin: 30px 0;
+    }
+}
+
+/* ipads and tablets */
+@media screen and (min-width: 796px) and (max-width: 1024px) {
+    body .main .content form {
+        width: 80%;
+        height: 90%;
+    }
+    body .main .img img {
+        width: 100%;
+        height: unset;
+    }
+
+    body .main .content form h1,
+    body .main .content form p {
+        margin: 20px 0;
+    }
+
+    body .main .content form .form-item {
+        margin: 18px 0;
+        width: 90%;
+    }
+
+    body .main .content form .form-item input.text {
+        font-size: 13px;
+    }
+
+    body .main .content form .form-item.terms {
+        font-size: 12px;
+        align-items: center;
+        margin: 25px 0;
+    }
+
+    body .main .content form .form-item input[type="submit"] {
+        height: 45px;
+        cursor: pointer;
+        font-size: 15px;
+    }
+}
+
+/* desktop and large screens */
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+    body .main .content form {
+        width: 83%;
+        height: 90%;
+    }
+
+    body .main .img img {
+        width: 100%;
+    }
+}
