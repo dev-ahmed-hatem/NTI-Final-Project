@@ -1,0 +1,256 @@
+.product-card {
+    width: 250px;
+    display: block;
+    cursor: pointer;
+}
+
+.product-card .top {
+    position: relative;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.product-card .top img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.product-card .top .offer {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-card .top .offer span {
+    border-radius: 3px;
+    width: 70px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.product-card .top .offer .new {
+    background-color: #fff;
+    margin-bottom: 7px;
+}
+
+.product-card .top .offer .percent {
+    background-color: var(--green);
+    color: #fff;
+}
+
+.product-card .top .heart {
+    position: absolute;
+    bottom: 110%;
+    right: 20px;
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 50%;
+    width: 29px;
+    height: 29px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5px;
+    box-shadow: 0px 0px 2px var(--brand-color);
+}
+
+.product-card .top .heart.loved,
+.product-card .top .heart:hover {
+    box-shadow: 0 0 5px;
+}
+
+.product-card .top .heart:hover path {
+    fill: var(--red) !important;
+}
+
+.product-card .top .add-to-cart {
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 40px;
+    font-size: 20px;
+    margin: auto;
+}
+
+.product-card .top:hover .heart {
+    bottom: 88%;
+}
+
+.product-card .top:hover .add-to-cart {
+    top: 83%;
+}
+
+.product-card .bottom > * {
+    margin-bottom: 10px;
+}
+
+.product-card .bottom .title {
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+.product-card:hover .bottom .title {
+    text-decoration: underline;
+}
+
+.product-card .bottom .price span {
+    font-size: 14px;
+}
+
+.product-card .bottom .price .new {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.product-card .bottom .price .old {
+    text-decoration: line-through;
+    color: var(--gray-4);
+}
+
+@media screen and (max-width: 768px) {
+    .product-card {
+        width: 220px;
+    }
+
+    .product-card .top {
+        margin-bottom: 5px;
+    }
+
+    .product-card .top .offer span {
+        width: 60px;
+        height: 20px;
+        font-size: 12px;
+    }
+
+    .product-card .top .heart svg {
+        width: 15px !important;
+    }
+
+    .product-card .bottom > * {
+        margin-bottom: 0;
+    }
+
+    .product-card .bottom .rate i svg {
+        width: 14px !important;
+    }
+
+    .product-card .bottom .title {
+        font-size: 13px;
+    }
+
+    .product-card .bottom .price span {
+        font-size: 10px;
+    }
+    .product-card .top .heart {
+        top: 15px;
+        bottom: unset;
+    }
+
+    .product-card:hover .top .heart {
+        bottom: unset;
+    }
+    .product-card .top .add-to-cart {
+        top: unset;
+        bottom: 10px;
+        border-radius: 6px;
+        width: 80%;
+        height: 30px;
+        font-size: 13px;
+    }
+
+    .product-card:hover .top .add-to-cart {
+        top: unset;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .product-card {
+        width: 180px;
+    }
+
+    .product-card .top .offer span {
+        width: 60px;
+        height: 20px;
+        font-size: 12px;
+    }
+
+    .product-card .top .heart {
+        right: 15px;
+        border-radius: 50%;
+        width: 22px;
+        height: 22px;
+    }
+
+    .product-card .top:hover .heart {
+        bottom: 85%;
+    }
+
+    .product-card .top .heart svg {
+        width: 15px !important;
+    }
+
+    .product-card .top .add-to-cart {
+        position: absolute;
+        top: 110%;
+        left: 50%;
+        width: 85%;
+        height: 32px;
+        font-size: 15px;
+        border-radius: 7px;
+    }
+
+    .product-card .bottom > * {
+        margin-bottom: 0;
+    }
+
+    .product-card .bottom .rate i svg {
+        width: 14px !important;
+    }
+
+    .product-card .bottom .title {
+        font-size: 13px;
+    }
+
+    .product-card .bottom .price span {
+        font-size: 10px;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+    .product-card {
+        width: 200px;
+    }
+
+    .product-card .top .add-to-cart {
+        position: absolute;
+        top: 110%;
+        left: 50%;
+        width: 85%;
+        height: 36px;
+        font-size: 18px;
+    }
+
+    .product-card .bottom > * {
+        margin-bottom: 0;
+    }
+
+    .product-card .bottom .title {
+        font-size: 15px;
+    }
+
+    .product-card .bottom .price span {
+        font-size: 11px;
+    }
+}

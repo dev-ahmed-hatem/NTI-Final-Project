@@ -1,0 +1,250 @@
+footer {
+    color: #fff;
+    background-color: var(--gray-7);
+    padding: 50px 9vw;
+}
+
+footer .top {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 35px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--gray-5);
+}
+
+footer .top .logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 35%;
+}
+
+footer .top .logo h1 {
+    font-weight: bolder;
+    font-size: 33px;
+}
+
+footer .top .logo .spacer,
+footer .top .logo p {
+    font-size: 15px;
+    color: var(--gray-4);
+}
+
+footer .top .links {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+
+footer .top .links a {
+    text-decoration: none;
+    color: #fff;
+    margin-left: 20px;
+}
+
+footer .top .links a li {
+    font-size: 16px;
+}
+
+footer .top .links a li:hover {
+    text-decoration: underline;
+}
+
+footer .bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .bottom .copyright {
+    font-size: 12px;
+}
+
+footer .bottom .copyright .link {
+    color: #fff;
+    border: none;
+    margin-left: 10px;
+}
+
+footer .bottom .copyright .link:hover {
+    text-decoration: underline;
+}
+
+footer .bottom .social a {
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+footer .bottom .social a:hover {
+    filter: opacity(0.5);
+}
+
+@media screen and (max-width: 768px) {
+    footer {
+        padding: 30px 9vw;
+    }
+
+    footer .top {
+        padding-bottom: 20px;
+        flex-direction: column;
+        align-items: center;
+        border: none;
+    }
+
+    footer .top .logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: stretch;
+        margin-bottom: 35px;
+        width: 100%;
+    }
+
+    footer .top .logo h1 {
+        font-weight: bolder;
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+
+    footer .top .logo .spacer {
+        display: none;
+    }
+
+    footer .top .logo p {
+        font-size: 13px;
+        color: var(--gray-4);
+    }
+
+    footer .top .links {
+        flex-direction: column;
+    }
+
+    footer .top .links a {
+        margin-bottom: 15px;
+    }
+
+    footer .top .links a li {
+        font-size: 13px;
+    }
+
+    footer .bottom .copyright {
+        text-align: center;
+    }
+
+    footer .bottom .copyright .link {
+        margin-top: 10px;
+    }
+
+    footer .bottom .copyright,
+    footer .bottom .copyright .link {
+        font-size: 10px;
+    }
+
+    footer .bottom {
+        flex-direction: column-reverse;
+        border-top: 2px solid var(--gray-4);
+        width: 90%;
+        margin: auto;
+    }
+
+    footer .bottom .social {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin: 20px 0;
+    }
+
+    footer .bottom .social a {
+        margin-bottom: 10px;
+    }
+
+    footer .bottom .social a svg {
+        width: 28px !important;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    footer {
+        padding: 30px 9vw;
+    }
+
+    footer .top {
+        padding-bottom: 20px;
+    }
+
+    footer .top .logo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 40%;
+    }
+
+    footer .top .logo h1 {
+        font-weight: bolder;
+        font-size: 20px;
+    }
+
+    footer .top .logo .spacer,
+    footer .top .logo p {
+        font-size: 11px;
+        color: var(--gray-4);
+    }
+
+    footer .top .links a {
+        margin-left: 10px;
+    }
+
+    footer .top .links a li {
+        font-size: 11px;
+    }
+
+    footer .bottom .copyright,
+    footer .bottom .copyright .link {
+        font-size: 9px;
+    }
+
+    footer .bottom .social a {
+        margin-left: 10px;
+    }
+
+    footer .bottom .social a svg {
+        width: 18px !important;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+    footer {
+        padding: 40px 9vw;
+    }
+
+    footer .top .logo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 40%;
+    }
+
+    footer .top .logo h1 {
+        font-weight: bolder;
+        font-size: 28px;
+    }
+
+    footer .top .logo .spacer,
+    footer .top .logo p {
+        font-size: 13px;
+        color: var(--gray-4);
+    }
+
+    footer .top .links a li {
+        font-size: 12px;
+    }
+
+    footer .bottom .copyright,
+    footer .bottom .copyright .link {
+        font-size: 9px;
+    }
+
+    footer .bottom .social a svg {
+        width: 25px !important;
+        margin-left: 0;
+    }
+}

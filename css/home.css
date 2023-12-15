@@ -1,5 +1,39 @@
-body > * {
+html.stop-scrolling {
+    overflow: hidden;
+    position: relative;
+}
+
+body > *:not(footer):not(section.newsletter):not(.hider):not(.sale) {
     margin: 0 9vw;
+}
+
+.hider {
+    background-color: var(--gray-5);
+    opacity: 0.4;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 50;
+    display: none;
+}
+
+.hider.active {
+    display: block;
+}
+
+a.link {
+    text-decoration: none;
+    color: var(--brand-color);
+    height: 22px;
+    font-size: 14px;
+    display: inline-block;
+    border-bottom: 1px solid var(--brand-color);
+}
+
+a.link:hover {
+    font-weight: bolder;
 }
 
 nav {
@@ -7,7 +41,10 @@ nav {
     justify-content: space-between;
     align-items: center;
     height: 70px;
-    /* box-shadow: 0 1px 5px var(--gray-3); */
+}
+
+nav .menu-btn {
+    display: none;
 }
 
 nav .logo h1 {
@@ -64,7 +101,9 @@ nav .utils i.cart .count {
     color: #ffffff;
     font-style: normal;
     text-align: center;
-    line-height: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 14px;
 }
 
@@ -76,16 +115,14 @@ nav .utils i.cart .count {
 }
 
 .banner .images {
-    position: absolute;
-    top: 0;
-    left: 0;
     height: 100%;
     display: flex;
-    flex-wrap: nowrap;
 }
 
 .banner .images img {
-    width: 82vw;
+    min-width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .banner .trails {
@@ -173,6 +210,11 @@ section.categories .category {
     padding: 40px;
 }
 
+section.categories .category:hover {
+    transform: translateY(-0.5vw);
+    box-shadow: 0 2px 3px var(--gray-6);
+}
+
 section.categories .category:not(:first-child) {
     align-items: flex-end;
 }
@@ -206,4 +248,634 @@ section.categories .category .content a {
 
 section.categories .category .content a:hover {
     font-weight: bolder;
+}
+
+section.arrivals > .title,
+section.articles > .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 50px 0;
+}
+
+section.arrivals > .title h1,
+section.articles > .title h1 {
+    font-size: 40px;
+}
+
+section.arrivals .products-container {
+    margin-bottom: 30px;
+    overflow-x: auto;
+}
+
+section.arrivals .products {
+    display: flex;
+    width: fit-content;
+    margin-bottom: 20px;
+}
+
+section.arrivals .products .product {
+    margin-right: 10px;
+}
+
+.features {
+    padding: 40px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.features .feature {
+    background-color: var(--gray-3);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: calc(25% - 30px / 3);
+    height: 260px;
+}
+
+.features .feature .title {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.features .feature .sub-title {
+    font-size: 15px;
+    color: var(--gray-4);
+}
+
+section.sale {
+    display: flex;
+    width: 100vw;
+}
+
+section.sale > div {
+    width: 50%;
+}
+
+section.sale .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+section.sale .content {
+    background-color: var(--gray-3);
+    padding: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section.sale .content .off {
+    color: var(--blue);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+section.sale .content h2 {
+    margin: 20px 0;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+section.sale .content p {
+    width: 70%;
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+section.sale .content a {
+    width: fit-content;
+    font-size: 17px;
+}
+
+section.articles {
+    padding-bottom: 50px;
+}
+
+section.articles .articles-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+section.articles .articles-container .article {
+    width: calc(100% / 3 - 20px);
+}
+
+section.articles .articles-container .article .img {
+    height: 300px;
+    margin-bottom: 20px;
+}
+
+section.articles .articles-container .article .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+section.articles .articles-container .article .title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    body > *:not(footer):not(section.newsletter):not(.hider):not(.sale) {
+        margin: 0 5vw;
+    }
+
+    nav .menu-btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: stretch;
+        height: 20px;
+        width: 30px;
+    }
+
+    nav .menu-btn span {
+        width: 100%;
+        height: 3px;
+        background-color: var(--gray-7);
+        border-radius: 3px;
+    }
+
+    nav .logo h1 {
+        font-size: 25px;
+    }
+
+    nav .links {
+        display: none;
+    }
+    nav .utils i {
+        margin-right: 18px;
+    }
+
+    nav .utils i:not(.cart) {
+        display: none;
+    }
+
+    nav .utils i.cart .count {
+        left: 100%;
+    }
+
+    .banner {
+        height: 50vh;
+        width: 90vw;
+    }
+
+    .banner .trails .trail {
+        width: 6px;
+        height: 6px;
+    }
+
+    .banner .arrow {
+        width: 45px;
+        height: 45px;
+    }
+
+    .banner .arrow.left-arrow {
+        left: 0;
+    }
+
+    .banner .arrow.right-arrow {
+        right: 5px;
+    }
+
+    section.title {
+        padding: 20px 0;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    section.title h1 {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+
+    section.title p {
+        font-size: 12px;
+        width: 100%;
+    }
+
+    section.categories {
+        grid-template-columns: 1fr;
+        grid-template-rows: 180px 180px 180px 180px;
+    }
+
+    section.categories .category {
+        padding: 20px;
+    }
+
+    section.categories .category:not(:first-child) {
+        align-items: center;
+    }
+
+    section.categories .category .content h2 {
+        font-size: 20px;
+        margin-bottom: 0;
+    }
+
+    section.categories .category .content a {
+        height: 18px;
+        font-size: 10px;
+    }
+
+    section.arrivals > .title,
+    section.articles > .title {
+        padding: 20px 0;
+    }
+
+    section.arrivals > .title h1,
+    section.articles > .title h1 {
+        font-size: 25px;
+    }
+
+    section.arrivals > .title a,
+    section.articles > .title a {
+        font-size: 12px;
+    }
+
+    section.arrivals .products {
+        margin-bottom: 25px;
+    }
+
+    section.arrivals .products-container {
+        margin-bottom: 15px;
+        overflow-x: auto;
+    }
+
+    .features {
+        flex-wrap: wrap;
+    }
+
+    .features .feature {
+        width: 48%;
+        padding: 20px;
+        height: 120px;
+        margin-bottom: 20px;
+    }
+
+    .features .feature .icon svg {
+        width: 28px !important;
+    }
+
+    .features .feature .title {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    .features .feature .sub-title {
+        font-size: 10px;
+    }
+
+    section.sale {
+        flex-direction: column;
+    }
+
+    section.sale > div {
+        width: 100%;
+    }
+
+    section.sale .content {
+        padding: 30px;
+    }
+
+    section.sale .content h2 {
+        font-size: 23px;
+        margin: 15px 0;
+    }
+
+    section.sale .content p {
+        margin-bottom: 15px;
+    }
+
+    section.sale .content a {
+        font-size: 11px;
+        height: 18px;
+    }
+
+    section.sale .content .off,
+    section.sale .content p,
+    section.sale .content a {
+        font-size: 11px;
+    }
+
+    section.articles {
+        padding-bottom: 0;
+    }
+
+    section.articles .articles-container {
+        flex-direction: column;
+    }
+
+    section.articles .articles-container .article {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    section.articles .articles-container .article .img {
+        height: 300px;
+        margin-bottom: 10px;
+    }
+
+    section.articles .articles-container .article .title {
+        font-size: 14px;
+        margin-bottom: 2px;
+    }
+
+    section.articles .articles-container .article a {
+        font-size: 10px;
+        height: 16px;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    nav .logo h1 {
+        font-size: 20px;
+    }
+
+    nav .links a {
+        margin-right: 12px;
+    }
+
+    nav .links a li {
+        font-size: 12px;
+    }
+
+    nav .utils i {
+        margin-right: 8px;
+    }
+
+    nav .utils i svg {
+        width: 15px !important;
+    }
+
+    nav .utils i.cart .count {
+        top: 6px;
+        width: 13px;
+        height: 13px;
+        font-size: 10px;
+    }
+
+    .banner {
+        height: 60vh;
+    }
+
+    .banner .trails .trail {
+        width: 6px;
+        height: 6px;
+    }
+
+    .banner .arrow {
+        width: 50px;
+        height: 50px;
+    }
+
+    section.title {
+        padding: 25px 0;
+    }
+
+    section.title h1 {
+        font-size: 26px;
+    }
+
+    section.title p {
+        font-size: 12px;
+        width: 50%;
+    }
+
+    section.categories {
+        grid-template-rows: 180px 180px;
+    }
+
+    section.categories .category {
+        padding: 20px;
+    }
+
+    section.categories .category .content h2 {
+        font-size: 20px;
+        margin-bottom: 0;
+    }
+
+    section.categories .category .content a {
+        height: 18px;
+        font-size: 10px;
+    }
+
+    section.arrivals > .title,
+    section.articles > .title {
+        padding: 30px 0;
+    }
+
+    section.arrivals > .title h1,
+    section.articles > .title h1 {
+        font-size: 25px;
+    }
+
+    section.arrivals > .title a,
+    section.articles > .title a {
+        font-size: 12px;
+    }
+
+    section.arrivals .products {
+        margin-bottom: 25px;
+    }
+
+    section.arrivals .products-container {
+        margin-bottom: 15px;
+        overflow-x: auto;
+    }
+
+    .features .feature {
+        padding: 25px;
+        height: 150px;
+    }
+
+    .features .feature .icon svg {
+        width: 28px !important;
+    }
+
+    .features .feature .title {
+        font-size: 12px;
+    }
+
+    .features .feature .sub-title {
+        font-size: 10px;
+    }
+
+    section.sale {
+        max-height: 280px;
+    }
+
+    section.sale .content {
+        padding: 30px;
+    }
+
+    section.sale .content h2 {
+        font-size: 23px;
+        margin: 15px 0;
+    }
+
+    section.sale .content p {
+        margin-bottom: 15px;
+    }
+
+    section.sale .content a {
+        font-size: 11px;
+        height: 18px;
+    }
+
+    section.sale .content .off,
+    section.sale .content p,
+    section.sale .content a {
+        font-size: 11px;
+    }
+
+    section.articles .articles-container .article .img {
+        height: 200px;
+        margin-bottom: 10px;
+    }
+
+    section.articles .articles-container .article .title {
+        font-size: 14px;
+        margin-bottom: 2px;
+    }
+
+    section.articles .articles-container .article a {
+        font-size: 10px;
+        height: 16px;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+    nav .logo h1 {
+        font-size: 28px;
+    }
+
+    nav .links a li {
+        font-size: 14px;
+    }
+
+    nav .utils i {
+        margin-right: 10px;
+    }
+
+    nav .utils i svg {
+        width: 20px !important;
+    }
+
+    nav .utils i.cart .count {
+        top: 4px;
+        width: 18px;
+        height: 18px;
+        font-size: 12px;
+    }
+
+    .banner .trails .trail {
+        width: 8px;
+        height: 8px;
+    }
+
+    .banner .arrow {
+        width: 50px;
+        height: 50px;
+    }
+
+    section.title {
+        padding: 30px 0;
+    }
+
+    section.title h1 {
+        font-size: 32px;
+    }
+
+    section.title p {
+        font-size: 15px;
+    }
+
+    section.categories {
+        grid-template-rows: 230px 230px;
+    }
+
+    section.categories .category {
+        padding: 25px;
+    }
+
+    section.categories .category .content h2 {
+        font-size: 27px;
+        margin-bottom: 0;
+    }
+
+    section.categories .category .content a {
+        height: 18px;
+        font-size: 12px;
+    }
+
+    section.arrivals > .title,
+    section.articles > .title {
+        padding: 40px 0;
+    }
+
+    section.arrivals > .title h1,
+    section.articles > .title h1 {
+        font-size: 30px;
+    }
+
+    section.arrivals > .title a,
+    section.articles > .title a {
+        font-size: 12px;
+    }
+
+    .features .feature {
+        height: 180px;
+    }
+
+    .features .feature .icon svg {
+        width: 38px !important;
+    }
+
+    .features .feature .title {
+        font-size: 14px;
+    }
+
+    .features .feature .sub-title {
+        font-size: 12px;
+    }
+
+    section.sale {
+        max-height: 380px;
+    }
+
+    section.sale .content {
+        padding: 40px;
+    }
+
+    section.sale .content h2 {
+        font-size: 30px;
+        margin: 15px 0;
+    }
+
+    section.sale .content p {
+        margin-bottom: 20px;
+    }
+
+    section.sale .content .off,
+    section.sale .content p,
+    section.sale .content a {
+        font-size: 13px;
+    }
+
+    section.articles .articles-container .article .img {
+        height: 250px;
+    }
+
+    section.articles .articles-container .article .title {
+        font-size: 17px;
+    }
+
+    section.articles .articles-container .article a {
+        font-size: 13px;
+    }
 }

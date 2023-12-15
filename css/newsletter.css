@@ -1,0 +1,143 @@
+section.newsletter {
+    width: 100vw;
+    height: 350px;
+    background-color: var(--gray-2);
+    background-image: url(../assets/images/chair.png),
+        url(../assets/images/nightstand.png);
+    background-repeat: no-repeat;
+    background-position: 115% center, -45% center;
+    background-size: 35%, 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section.newsletter .content {
+    text-align: center;
+    width: 500px;
+}
+
+section.newsletter .content h2 {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+section.newsletter .content p {
+    font-size: 16px;
+    margin-bottom: 40px;
+}
+
+section.newsletter .content .email-field {
+    position: relative;
+    width: 100%;
+    margin: auto;
+}
+
+section.newsletter .content .email-field {
+    position: relative;
+}
+
+section.newsletter .content .email-field .icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+section.newsletter .content .email-field .signup {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    color: var(--gray-4);
+}
+
+section.newsletter .content .email-field input {
+    outline: none;
+    border: none;
+    border-bottom: 2px solid var(--gray-4);
+    background-color: transparent;
+    font-size: 16px;
+    width: 100%;
+    padding: 4px 45px;
+}
+
+@media screen and (max-width: 768px){
+    section.newsletter {
+        background-position: 110% -75%, -50% 100%;
+        height: 250px;
+    }
+
+    section.newsletter .content {
+        width: 80%;
+    }
+
+    section.newsletter .content h2 {
+        font-size: 26px;
+    }
+    
+    section.newsletter .content p {
+        font-size: 12px;
+        margin-bottom: 30px;
+    }
+
+    section.newsletter .content .email-field .icon svg {
+        width: 20px !important;
+    }
+
+    section.newsletter .content .email-field {
+        width: 90%;
+    }
+
+    section.newsletter .content .email-field .signup {
+        font-size: 13px;
+    }
+
+    section.newsletter .content .email-field input {
+        height: 35px;
+        font-size: 13px;
+        padding: 4px 50px 4px 35px;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    section.newsletter {
+        background-position: 125% center, -55% center;
+        height: 300px;
+    }
+
+    section.newsletter .content h2 {
+        font-size: 30px;
+    }
+    
+    section.newsletter .content p {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+
+    section.newsletter .content .email-field .icon svg {
+        width: 20px !important;
+    }
+
+    section.newsletter .content .email-field {
+        width: 90%;
+    }
+
+    section.newsletter .content .email-field .signup {
+        font-size: 13px;
+    }
+
+    section.newsletter .content .email-field input {
+        height: 35px;
+        font-size: 13px;
+        padding: 4px 50px 4px 35px;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+    section.newsletter {
+        background-position: 115% center, -50% center;
+
+    }
+}

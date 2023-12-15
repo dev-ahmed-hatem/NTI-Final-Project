@@ -171,7 +171,7 @@ body .main .content form .form-item input[type="submit"] {
 }
 
 /* ipads and tablets */
-@media screen and (min-width: 796px) and (max-width: 1024px) {
+@media screen and (min-width: 769px) and (max-width: 1024px) {
     body .main .content form {
         width: 80%;
         height: 90%;
