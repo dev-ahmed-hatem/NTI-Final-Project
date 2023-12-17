@@ -1,0 +1,241 @@
+body > * {
+    margin: 0 12vw;
+}
+
+.breadcrumbs ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+    width: 22vw;
+    font-size: 15px;
+}
+
+.breadcrumbs ul li a {
+    text-decoration: none;
+    color: var(--brand-color);
+}
+
+.breadcrumbs ul li:hover a {
+    text-decoration: underline;
+}
+
+.breadcrumbs ul li + li::before {
+    content: ">";
+    padding-right: 10px;
+}
+
+.view {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0;
+}
+
+.view > .img {
+    width: 42%;
+}
+
+.view > .content {
+    width: 56%;
+}
+
+.view .img .current {
+    position: relative;
+    width: 100%;
+    background-color: var(--gray-2);
+    text-align: center;
+}
+
+.view .img .current .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.view .img .current .left-arrow {
+    left: 2px;
+}
+
+.view .img .current .right-arrow {
+    right: 2px;
+}
+
+.view .img .current img.current-view {
+    width: 70%;
+    height: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.view .img .gallery {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.view .img .gallery img {
+    width: calc(100% / 3 - 10px);
+}
+
+.view .content .review {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 30%;
+    margin-bottom: 20px;
+}
+
+.view .content .title h1 {
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+.view .content .description {
+    font-size: 16px;
+    line-height: 30px;
+    margin-bottom: 20px;
+    color: var(--gray-4);
+}
+
+.view .content .price .new {
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.view .content .price .old {
+    font-size: 17px;
+    color: var(--gray-5);
+    text-decoration: line-through;
+    margin-left: 15px;
+}
+
+.view .content .sep {
+    width: 85%;
+    height: 1px;
+    border-radius: 8px;
+    background-color: var(--gray-4);
+    margin: 30px auto;
+}
+
+.view .content .offer .time {
+    margin-top: 20px;
+    display: flex;
+}
+
+.view .content .offer .time > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 10px;
+    width: 65px;
+}
+
+.view .content .offer .time > div span:first-child {
+    width: 60px;
+    height: 60px;
+    background-color: var(--gray-3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.view .content .offer .time > div span:last-child {
+    font-size: 13px;
+}
+
+.view .content .ext-details .title,
+.view .content .color .title {
+    font-size: 14px;
+    color: var(--gray-4);
+    margin-bottom: 15px;
+}
+
+.view .content .ext-details .text,
+.view .content .color .text {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.view .content .color .options img {
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+.view .content .color .options img:hover,
+.view .content .color .options .active {
+    border: 1px solid;
+}
+
+.view .content .btns {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    width: 70%;
+    justify-content: space-between;
+}
+
+.view .content .btns .quantity {
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+    border: 1px solid var(--gray-3);
+    border-radius: 6px;
+    height: 40px;
+    width: 20%;
+    overflow: hidden;
+}
+
+.view .content .btns .quantity span {
+    width: 33.3%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--gray-3);
+}
+
+.view .content .btns .quantity span.btn {
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.view .content .btns .quantity span.btn:hover {
+    background-color: var(--gray-5);
+    color: #fff;
+}
+
+.view .btns .wishlist {
+    width: 78%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 2px solid var(--gray-6);
+    border-radius: 8px;
+}
+
+.view .btns .wishlist:hover {
+    background-color: crimson;
+    border-color: crimson;
+}
+
+.view .btns .wishlist img {
+    margin-right: 10px;
+}
+
+.view .btns .add-to-cart {
+    margin-top: 10px;
+    height: 50px;
+    width: 100%;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}

@@ -4,16 +4,104 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./css/style.css" />
+        <link rel="stylesheet" href="./css/navbar.css" />
         <link rel="stylesheet" href="./css/home.css" />
         <link rel="stylesheet" href="./css/fly-menu.css" />
         <link rel="stylesheet" href="./css/cart-menu.css" />
         <link rel="stylesheet" href="./css/product-card.css" />
         <link rel="stylesheet" href="./css/newsletter.css" />
         <link rel="stylesheet" href="./css/footer.css" />
+        <link rel="stylesheet" href="css/notification-bar.css" />
+        <link rel="stylesheet" href="css/scroll-to-top.css" />
         <title>E-Commerce Template</title>
     </head>
     <body>
         <div class="hider" id="hider"></div>
+        <div class="notification-bar" id="notification-bar">
+            Item added to cart
+        </div>
+        <div class="scroll-to-top" id="scroll-to-top" onclick="scrollToTop()">
+            <i class="top-arrow arrow" id="top-arrow">
+                <svg
+                    width="100%"
+                    height="100%"
+                    viewBox="0 0 70 70"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <g filter="url(#filter0_d_4_11227)">
+                        <rect
+                            x="16"
+                            y="8"
+                            width="52"
+                            height="52"
+                            rx="26"
+                            fill="white"
+                        />
+                        <path
+                            d="M32.6667 34H51.3334"
+                            stroke="#141718"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+                        <path
+                            d="M32.6667 34L40.6667 42"
+                            stroke="#141718"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+                        <path
+                            d="M32.6667 34L40.6667 26"
+                            stroke="#141718"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+                    </g>
+                    <defs>
+                        <filter
+                            id="filter0_d_4_11227"
+                            x="0"
+                            y="0"
+                            width="70"
+                            height="70"
+                            filterUnits="userSpaceOnUse"
+                            color-interpolation-filters="sRGB"
+                        >
+                            <feFlood
+                                flood-opacity="0"
+                                result="BackgroundImageFix"
+                            />
+                            <feColorMatrix
+                                in="SourceAlpha"
+                                type="matrix"
+                                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                result="hardAlpha"
+                            />
+                            <feOffset dy="8" />
+                            <feGaussianBlur stdDeviation="8" />
+                            <feColorMatrix
+                                type="matrix"
+                                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.0364401 0"
+                            />
+                            <feBlend
+                                mode="normal"
+                                in2="BackgroundImageFix"
+                                result="effect1_dropShadow_4_11227"
+                            />
+                            <feBlend
+                                mode="normal"
+                                in="SourceGraphic"
+                                in2="effect1_dropShadow_4_11227"
+                                result="shape"
+                            />
+                        </filter>
+                    </defs>
+                </svg>
+            </i>
+        </div>
         <!-- Fly Menu Start -->
         <div class="fly-menu" id="fly-menu">
             <div class="top">
@@ -68,9 +156,10 @@
                     <span></span>
                 </div>
             </div>
-            <div class="cart-items">
-                <div class="container">
-                    <div class="cart-item">
+            <p class="empty">Your cart is empty!</p>
+            <div class="cart-items cart-data">
+                <div class="container" id="cart-items-container">
+                    <div class="cart-item" id="cart-item-template">
                         <div class="content">
                             <div class="img">
                                 <img
@@ -82,18 +171,34 @@
                                 <h3 class="title heading">Tray Table</h3>
                                 <div class="color">Color: Black</div>
                                 <div class="quantity">
-                                    <span class="btn decrement">-</span>
-                                    <span class="count">2</span>
-                                    <span class="btn increment">+</span>
+                                    <span
+                                        class="btn decrement"
+                                        id="decrement"
+                                        onclick="changeAmount(this)"
+                                        >-</span
+                                    >
+                                    <span class="count" id="count">2</span>
+                                    <span
+                                        class="btn increment"
+                                        id="increment"
+                                        onclick="changeAmount(this)"
+                                        >+</span
+                                    >
                                 </div>
                             </div>
                         </div>
                         <div class="price">
                             <div class="text">$19.19</div>
-                            <div class="delete"><span></span><span></span></div>
+                            <div
+                                class="delete"
+                                id="delete"
+                                onclick="deleteCartItem(this)"
+                            >
+                                <span></span><span></span>
+                            </div>
                         </div>
                     </div>
-                    <div class="cart-item">
+                    <!-- <div class="cart-item">
                         <div class="content">
                             <div class="img">
                                 <img
@@ -184,15 +289,15 @@
                             <div class="text">$19.19</div>
                             <div class="delete"><span></span><span></span></div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
-            <div class="total">
+            <div class="total cart-data">
                 <span class="text heading">Total:</span>
                 <span class="price">$234.00</span>
             </div>
-            <div class="checkout brand-btn">Checkout</div>
-            <a class="view-cart" href="">View Cart</a>
+            <div class="checkout brand-btn cart-data">Checkout</div>
+            <a class="view-cart cart-data" href="">View Cart</a>
         </div>
         <!-- Cart Menu End -->
 
@@ -493,7 +598,7 @@
             </div>
             <div class="products-container">
                 <div class="products">
-                    <div class="product product-card">
+                    <div class="product product-card" id="product-1">
                         <div class="top">
                             <img src="./assets/images/view-1.png" alt="" />
                             <div class="offer">
@@ -518,7 +623,12 @@
                                     </svg>
                                 </i>
                             </div>
-                            <div class="add-to-cart brand-btn">Add to cart</div>
+                            <div
+                                class="add-to-cart brand-btn"
+                                data-id="product-1"
+                            >
+                                Add to cart
+                            </div>
                         </div>
                         <div class="bottom">
                             <div class="rate">
@@ -600,7 +710,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="product product-card">
+                    <div class="product product-card" id="product-2">
                         <div class="top">
                             <img src="./assets/images/view-2.png" alt="" />
                             <div class="offer">
@@ -625,7 +735,12 @@
                                     </svg>
                                 </i>
                             </div>
-                            <div class="add-to-cart brand-btn">Add to cart</div>
+                            <div
+                                class="add-to-cart brand-btn"
+                                data-id="product-2"
+                            >
+                                Add to cart
+                            </div>
                         </div>
                         <div class="bottom">
                             <div class="rate">
@@ -706,7 +821,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="product product-card">
+                    <div class="product product-card" id="product-3">
                         <div class="top">
                             <img src="./assets/images/view-3.png" alt="" />
                             <div class="offer">
@@ -731,7 +846,12 @@
                                     </svg>
                                 </i>
                             </div>
-                            <div class="add-to-cart brand-btn">Add to cart</div>
+                            <div
+                                class="add-to-cart brand-btn"
+                                data-id="product-3"
+                            >
+                                Add to cart
+                            </div>
                         </div>
                         <div class="bottom">
                             <div class="rate">
@@ -812,7 +932,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="product product-card">
+                    <div class="product product-card" id="product-4">
                         <div class="top">
                             <img src="./assets/images/view-4.png" alt="" />
                             <div class="offer">
@@ -837,7 +957,12 @@
                                     </svg>
                                 </i>
                             </div>
-                            <div class="add-to-cart brand-btn">Add to cart</div>
+                            <div
+                                class="add-to-cart brand-btn"
+                                data-id="product-4"
+                            >
+                                Add to cart
+                            </div>
                         </div>
                         <div class="bottom">
                             <div class="rate">
@@ -918,7 +1043,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="product product-card">
+                    <div class="product product-card" id="product-5">
                         <div class="top">
                             <img src="./assets/images/view-5.png" alt="" />
                             <div class="offer">
@@ -943,7 +1068,12 @@
                                     </svg>
                                 </i>
                             </div>
-                            <div class="add-to-cart brand-btn">Add to cart</div>
+                            <div
+                                class="add-to-cart brand-btn"
+                                data-id="product-5"
+                            >
+                                Add to cart
+                            </div>
                         </div>
                         <div class="bottom">
                             <div class="rate">
@@ -1026,7 +1156,7 @@
                     </div>
 
                     <!-- Repeat -->
-                    <div class="product product-card">
+                    <div class="product product-card" id="product-6">
                         <div class="top">
                             <img src="./assets/images/view-1.png" alt="" />
                             <div class="offer">
@@ -1051,7 +1181,12 @@
                                     </svg>
                                 </i>
                             </div>
-                            <div class="add-to-cart brand-btn">Add to cart</div>
+                            <div
+                                class="add-to-cart brand-btn"
+                                data-id="product-6"
+                            >
+                                Add to cart
+                            </div>
                         </div>
                         <div class="bottom">
                             <div class="rate">
@@ -1133,7 +1268,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="product product-card">
+                    <div class="product product-card" id="product-7">
                         <div class="top">
                             <img src="./assets/images/view-2.png" alt="" />
                             <div class="offer">
@@ -1158,7 +1293,12 @@
                                     </svg>
                                 </i>
                             </div>
-                            <div class="add-to-cart brand-btn">Add to cart</div>
+                            <div
+                                class="add-to-cart brand-btn"
+                                data-id="product-7"
+                            >
+                                Add to cart
+                            </div>
                         </div>
                         <div class="bottom">
                             <div class="rate">
@@ -1239,7 +1379,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="product product-card">
+                    <div class="product product-card" id="product-8">
                         <div class="top">
                             <img src="./assets/images/view-3.png" alt="" />
                             <div class="offer">
@@ -1264,7 +1404,12 @@
                                     </svg>
                                 </i>
                             </div>
-                            <div class="add-to-cart brand-btn">Add to cart</div>
+                            <div
+                                class="add-to-cart brand-btn"
+                                data-id="product-8"
+                            >
+                                Add to cart
+                            </div>
                         </div>
                         <div class="bottom">
                             <div class="rate">
@@ -1345,7 +1490,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="product product-card">
+                    <div class="product product-card" id="product-9">
                         <div class="top">
                             <img src="./assets/images/view-4.png" alt="" />
                             <div class="offer">
@@ -1370,7 +1515,12 @@
                                     </svg>
                                 </i>
                             </div>
-                            <div class="add-to-cart brand-btn">Add to cart</div>
+                            <div
+                                class="add-to-cart brand-btn"
+                                data-id="product-9"
+                            >
+                                Add to cart
+                            </div>
                         </div>
                         <div class="bottom">
                             <div class="rate">
@@ -1451,7 +1601,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="product product-card">
+                    <div class="product product-card" id="product-10">
                         <div class="top">
                             <img src="./assets/images/view-5.png" alt="" />
                             <div class="offer">
@@ -1476,7 +1626,12 @@
                                     </svg>
                                 </i>
                             </div>
-                            <div class="add-to-cart brand-btn">Add to cart</div>
+                            <div
+                                class="add-to-cart brand-btn"
+                                data-id="product-10"
+                            >
+                                Add to cart
+                            </div>
                         </div>
                         <div class="bottom">
                             <div class="rate">
@@ -1872,5 +2027,8 @@
         </footer>
         <!-- Footer End -->
         <script src="./js/home.js"></script>
+        <script src="./js/navbar.js"></script>
+        <script src="./js/cart-home.js"></script>
+        <script src="./js/scroll-to-top.js"></script>
     </body>
 </html>

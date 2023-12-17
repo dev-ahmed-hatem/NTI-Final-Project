@@ -1,0 +1,24 @@
+.notification-bar {
+    position: fixed;
+    right: -9vw;
+    top: 7vh;
+    border-radius: 15px 0 0 15px;
+    padding: 20px 40px;
+    z-index: 100;
+    color: var(--gray-7);
+    font-size: 18px;
+    font-weight: bold;
+    transform: translateX(100%);
+}
+
+.notification-bar.success {
+    background-color: var(--green);
+}
+
+.notification-bar.danger {
+    background-color: crimson;
+}
+
+.notification-bar.show {
+    transform: translateX(0);
+}

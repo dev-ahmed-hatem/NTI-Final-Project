@@ -18,6 +18,15 @@
     transform: translateX(0);
 }
 
+.cart-menu .empty {
+    text-align: center;
+    color: crimson;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .cart-menu .title {
     display: flex;
     justify-content: space-between;

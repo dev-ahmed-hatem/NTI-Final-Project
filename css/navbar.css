@@ -1,0 +1,161 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+nav .menu-btn {
+    display: none;
+}
+
+nav .logo h1 {
+    font-weight: bolder;
+    font-size: 33px;
+}
+
+nav .links {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+
+nav .links a {
+    text-decoration: none;
+    color: #000;
+    margin-right: 20px;
+}
+
+nav .links a li {
+    font-size: 16px;
+}
+
+nav .links a li.active {
+    font-weight: bold;
+}
+
+nav .utils {
+    display: flex;
+    align-items: center;
+}
+
+nav .utils i {
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+nav .utils i:hover {
+    filter: opacity(0.5);
+}
+
+nav .utils i.cart {
+    position: relative;
+}
+
+nav .utils i.cart .count {
+    position: absolute;
+    left: 115%;
+    top: 1px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: var(--brand-color);
+    color: #ffffff;
+    font-style: normal;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+
+@media screen and (max-width: 768px) {
+    nav .menu-btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: stretch;
+        height: 20px;
+        width: 30px;
+    }
+
+    nav .menu-btn span {
+        width: 100%;
+        height: 3px;
+        background-color: var(--gray-7);
+        border-radius: 3px;
+    }
+
+    nav .logo h1 {
+        font-size: 25px;
+    }
+
+    nav .links {
+        display: none;
+    }
+    nav .utils i {
+        margin-right: 18px;
+    }
+
+    nav .utils i:not(.cart) {
+        display: none;
+    }
+
+    nav .utils i.cart .count {
+        left: 100%;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    nav .logo h1 {
+        font-size: 20px;
+    }
+
+    nav .links a {
+        margin-right: 12px;
+    }
+
+    nav .links a li {
+        font-size: 12px;
+    }
+
+    nav .utils i {
+        margin-right: 8px;
+    }
+
+    nav .utils i svg {
+        width: 15px !important;
+    }
+
+    nav .utils i.cart .count {
+        top: 6px;
+        width: 13px;
+        height: 13px;
+        font-size: 10px;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+    nav .logo h1 {
+        font-size: 28px;
+    }
+
+    nav .links a li {
+        font-size: 14px;
+    }
+
+    nav .utils i {
+        margin-right: 10px;
+    }
+
+    nav .utils i svg {
+        width: 20px !important;
+    }
+
+    nav .utils i.cart .count {
+        top: 4px;
+        width: 18px;
+        height: 18px;
+        font-size: 12px;
+    }
+}

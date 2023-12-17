@@ -1,0 +1,33 @@
+.scroll-to-top {
+    position: fixed;
+    bottom: 10vh;
+    right: -8vw;
+    transform: rotateZ(90deg);
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 1000;
+}
+
+.scroll-to-top rect {
+    fill: var(--gray-3);
+}
+
+.scroll-to-top:hover rect {
+    fill: var(--gray-4);
+}
+
+@media screen and (max-width: 768px) {
+    .scroll-to-top {
+        right: 1vw;
+        bottom: 4vh;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .scroll-to-top {
+        width: 50px;
+        height: 50px;
+    }
+}
